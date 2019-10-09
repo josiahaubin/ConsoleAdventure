@@ -45,6 +45,8 @@ namespace ConsoleAdventure.Project.Models
       //NOTE  Add items to rooms
       sr.Items.Add(mountainDew);
       sr.Items.Add(mountainLightning);
+
+      CurrentRoom = sr;
     }
   }
 }

@@ -5,7 +5,6 @@ using ConsoleAdventure.Project.Models;
 
 namespace ConsoleAdventure.Project.Controllers
 {
-
   public class GameController : IGameController
   {
     private GameService _gameService = new GameService();
@@ -13,7 +12,12 @@ namespace ConsoleAdventure.Project.Controllers
     //NOTE Makes sure everything is called to finish Setup and Starts the Game loop
     public void Run()
     {
-
+      NewGame();
+      while (true)
+      {
+        Print();
+        GetUserInput();
+      }
     }
 
     //NOTE Gets the user input, calls the appropriate command, and passes on the option if needed.
@@ -25,7 +29,12 @@ namespace ConsoleAdventure.Project.Controllers
       string option = input.Substring(input.IndexOf(" ") + 1).Trim();
       //NOTE this will take the user input and parse it into a command and option.
       //IE: take silver key => command = "take" option = "silver key"
-
+      switch (input)
+      {
+        case "quit":
+          _gameService.Quit();
+          break;
+      }
     }
 
     //NOTE this should print your messages for the game.
@@ -35,6 +44,14 @@ namespace ConsoleAdventure.Project.Controllers
       {
         Console.WriteLine(message);
       }
+      _gameService.Messages.Clear();
+    }
+
+    private void NewGame()
+    {
+      Console.WriteLine("What is your name?");
+      string name = Console.ReadLine();
+      _gameService.Setup(name);
     }
 
   }
