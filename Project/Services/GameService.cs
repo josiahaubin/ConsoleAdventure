@@ -21,7 +21,16 @@ namespace ConsoleAdventure.Project
     }
     public void Help()
     {
-      throw new System.NotImplementedException();
+      string info = @"
+Go: Moves the player from room to room
+Use: Uses an item in a room or from your inventory
+Take: Places an item into the player inventory and removes it from the room
+Look: Prints the description of the room again
+Inventory: Prints the players inventory
+Help: Shows a list of commands and actions
+Quit: Quits the Game
+      ";
+      Messages.Add(info);
     }
 
     public void Inventory()
@@ -50,7 +59,7 @@ namespace ConsoleAdventure.Project
     {
       Player player = new Player(playerName);
       _game.CurrentPlayer = player;
-      Messages.Add("Welcome " + player.Name);
+      Messages.Add("Welcome " + player.Name + ", start your journey or type help for commands.");
     }
     ///<summary>When taking an item be sure the item is in the current room before adding it to the player inventory, Also don't forget to remove the item from the room it was picked up in</summary>
     public void TakeItem(string itemName)

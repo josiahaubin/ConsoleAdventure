@@ -32,7 +32,13 @@ namespace ConsoleAdventure.Project.Controllers
       switch (command)
       {
         case "quit":
+          Console.Clear();
           _gameService.Quit();
+          break;
+        case "help":
+          Console.Clear();
+          _gameService.Help();
+          Print();
           break;
       }
     }
@@ -52,6 +58,7 @@ namespace ConsoleAdventure.Project.Controllers
       Console.WriteLine("What is your name?");
       string name = Console.ReadLine();
       _gameService.Setup(name);
+      Console.Clear();
     }
 
   }
