@@ -37,6 +37,14 @@ namespace ConsoleAdventure.Project.Models
 
       r3.AddExit(lr);
       lr.AddExit(r3);
+
+      //NOTE Create items
+      Item mountainDew = new Item("Mountain Dew", "An Crisp, Refreshing Exlir. Can are commonly collected to display superiority");
+      Item mountainLightning = new Item("Mountain Lightning", "Not quite dewing the dew, but saves you the pennies");
+
+      //NOTE  Add items to rooms
+      sr.Items.Add(mountainDew);
+      sr.Items.Add(mountainLightning);
     }
   }
 }
