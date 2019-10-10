@@ -27,7 +27,7 @@ namespace ConsoleAdventure.Project.Models
       template += "\n\nExits:";
       foreach (var exit in Exits)
       {
-        template += exit.Key;
+        template += " " + exit.Key;
       }
       return template;
     }
