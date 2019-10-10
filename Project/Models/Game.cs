@@ -4,6 +4,11 @@ namespace ConsoleAdventure.Project.Models
 {
   public class Game : IGame
   {
+    public Game()
+    {
+      Setup();
+    }
+
     public IRoom CurrentRoom { get; set; }
     public IPlayer CurrentPlayer { get; set; }
 
@@ -39,8 +44,8 @@ namespace ConsoleAdventure.Project.Models
       lr.AddExit(r3);
 
       //NOTE Create items
-      Item mountainDew = new Item("Mountain Dew", "An Crisp, Refreshing Exlir. Can are commonly collected to display superiority");
-      Item mountainLightning = new Item("Mountain Lightning", "Not quite dewing the dew, but saves you the pennies");
+      Item mountainDew = new Item("Mountain Dew", "A Crisp, Refreshing Exlir. Cans are commonly collected to display superiority.");
+      Item mountainLightning = new Item("Mountain Lightning", "Not quite dewing the dew, but saves you the pennies.");
 
       //NOTE  Add items to rooms
       sr.Items.Add(mountainDew);
@@ -48,5 +53,6 @@ namespace ConsoleAdventure.Project.Models
 
       CurrentRoom = sr;
     }
+
   }
 }

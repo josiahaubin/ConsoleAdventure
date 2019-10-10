@@ -13,7 +13,17 @@ namespace ConsoleAdventure.Project.Models
 
     public void AddExit(IRoom room)
     {
-      Exits.Add(Name, room);
+      Exits.Add(room.Name, room);
+    }
+    public string GetTemplate()
+    {
+      string template = $"You are currently in {Name} and {Description} \n The room contains:";
+
+      foreach (Item item in Items)
+      {
+        template += $"{item.Name}: {item.Description}";
+      }
+      return template;
     }
     public Room(string name, string description)
     {

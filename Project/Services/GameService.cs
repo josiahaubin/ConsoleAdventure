@@ -40,7 +40,7 @@ Quit: Quits the Game
 
     public void Look()
     {
-      throw new System.NotImplementedException();
+      Messages.Add(_game.CurrentRoom.GetTemplate());
     }
 
     public void Quit()
@@ -76,5 +76,6 @@ Quit: Quits the Game
     {
       throw new System.NotImplementedException();
     }
+
   }
 }
