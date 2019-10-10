@@ -113,6 +113,11 @@ Quit: Quits the Game
         }
         else if (item.Name.ToLower() == itemName && itemName == "mountain lightning")
         {
+          if (_game.CurrentRoom != item.To)
+          {
+            Messages.Add("You can't use mountain lightning here.");
+            return;
+          }
           _game.CurrentPlayer.Inventory.Remove(item);
           _game.CurrentRoom.Description = "This is where you started your quest for the Golden Banana. That didn't do much, we did say to choose wisely...";
           Messages.Add(_game.CurrentRoom.GetTemplate());
