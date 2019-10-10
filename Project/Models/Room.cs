@@ -11,9 +11,9 @@ namespace ConsoleAdventure.Project.Models
     public List<Item> Items { get; set; }
     public Dictionary<string, IRoom> Exits { get; set; }
 
-    public void AddExit(IRoom room)
+    public void AddExit(IRoom room, string direction)
     {
-      Exits.Add(room.Name, room);
+      Exits.Add(direction, room);
     }
     public string GetTemplate()
     {

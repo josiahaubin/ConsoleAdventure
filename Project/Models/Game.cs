@@ -25,23 +25,23 @@ namespace ConsoleAdventure.Project.Models
       Room wr = new Room("Developer's Paradise.", "As you enter this room you see the great code monkey typing away at his c# code...error free. He gifts you the same power as he hands you the Golden Banana.");
 
       //NOTE Create relationships between rooms
-      sr.AddExit(r1);
-      r1.AddExit(sr);
+      sr.AddExit(r1, "east");
+      r1.AddExit(sr, "west");
 
-      r1.AddExit(r2);
-      r2.AddExit(r1);
+      r1.AddExit(r2, "east");
+      r2.AddExit(r1, "west");
 
-      r2.AddExit(r4);
-      r4.AddExit(r2);
+      r2.AddExit(r4, "south");
+      r4.AddExit(r2, "north");
 
-      r2.AddExit(r3);
-      r3.AddExit(r2);
+      r2.AddExit(r3, "north");
+      r3.AddExit(r2, "south");
 
-      r3.AddExit(wr);
-      wr.AddExit(r3);
+      r3.AddExit(wr, "east");
+      wr.AddExit(r3, "west");
 
-      r3.AddExit(lr);
-      lr.AddExit(r3);
+      r3.AddExit(lr, "north");
+      lr.AddExit(r3, "south");
 
       //NOTE Create items
       Item mountainDew = new Item("Mountain Dew", "A Crisp, Refreshing Exlir. Cans are commonly collected to display superiority.");
