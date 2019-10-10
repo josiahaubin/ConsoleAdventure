@@ -71,7 +71,7 @@ Quit: Quits the Game
       Player player = new Player(playerName);
       _game.CurrentPlayer = player;
       Messages.Add("Welcome " + player.Name + ",");
-      Messages.Add("You are a Junior Dev Student and the great and wise D$ and Mark inform you about the legend of the Great CodeMonkey.\nThe Great CodeMonkey posses the Golden Banana, which has the power to instantly debug your code.\nIn need of this you set off on your quest to find the CodeMonkey and obtain the Golden Banana.\nYou enter into the developer temple and start your journey. (For assistance type help for commands.)");
+      Messages.Add("You are a Junior Dev Student and the great and wise D$ and Mark inform you about the legend of The Great CodeMonkey.\nThe Great CodeMonkey posses the Golden Banana, which has the power to instantly debug your code.\nIn need of this you set off on your quest to find the CodeMonkey and obtain the Golden Banana.\nYou enter into the developer temple and start your journey. (For assistance type help for commands.)");
       Messages.Add("\n\n" + _game.CurrentRoom.GetTemplate());
 
     }
@@ -119,7 +119,7 @@ Quit: Quits the Game
             return;
           }
           _game.CurrentPlayer.Inventory.Remove(item);
-          _game.CurrentRoom.Description = "This is where you started your quest for the Golden Banana. That didn't do much, we did say to choose wisely...";
+          _game.CurrentRoom.Description = "This is where you started your quest for the Golden Banana. That Mountain Lightning didn't do much, we did say to choose wisely...";
           Messages.Add(_game.CurrentRoom.GetTemplate());
           return;
         }
@@ -129,7 +129,7 @@ Quit: Quits the Game
 
     public bool CheckRoom()
     {
-      if (_game.CurrentRoom.Name == "Coding Glory" || _game.CurrentRoom.Name == "Pizza Under the Door room.")
+      if (_game.CurrentRoom.Name == "Coding Glory" || _game.CurrentRoom.Name == "Pizza Under the Door Room")
       {
         if (_game.CurrentRoom.Name == "Coding Glory")
         {
