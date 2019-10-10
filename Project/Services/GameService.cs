@@ -27,6 +27,7 @@ namespace ConsoleAdventure.Project
         return;
       }
       Messages.Add($"Traveled from {current} to {destination}");
+      Messages.Add("\n" + _game.CurrentRoom.GetTemplate());
     }
     public void Help()
     {
@@ -70,6 +71,7 @@ Quit: Quits the Game
       _game.CurrentPlayer = player;
       Messages.Add("Welcome " + player.Name + ",");
       Messages.Add("You are a Junior Dev Student and the great and wise D$ and Mark inform you about the legend of the Great CodeMonkey.\nThe Great CodeMonkey posses the Golden Banana, which has the power to instantly debug your code.\nIn need of this you set off on your quest to find the CodeMonkey and obtain the Golden Banana.\nYou enter into the developer temple and start your journey. (For assistance type help for commands.)");
+      Messages.Add("\n\n" + _game.CurrentRoom.GetTemplate());
 
     }
     ///<summary>When taking an item be sure the item is in the current room before adding it to the player inventory, Also don't forget to remove the item from the room it was picked up in</summary>
