@@ -8,6 +8,17 @@ namespace ConsoleAdventure.Project.Models
 
     public string Name { get; set; }
     public List<Item> Inventory { get; set; }
+
+    public string GetTemplate()
+    {
+      string template = "Items:";
+      foreach (var item in Inventory)
+      {
+        template += $" {item.Name}";
+      }
+
+      return template;
+    }
     public Player(string name)
     {
       Name = name;

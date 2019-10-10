@@ -44,7 +44,7 @@ Quit: Quits the Game
 
     public void Inventory()
     {
-      throw new System.NotImplementedException();
+      Messages.Add(_game.CurrentPlayer.GetTemplate());
     }
 
     public void Look()
@@ -75,7 +75,20 @@ Quit: Quits the Game
     ///<summary>When taking an item be sure the item is in the current room before adding it to the player inventory, Also don't forget to remove the item from the room it was picked up in</summary>
     public void TakeItem(string itemName)
     {
-      throw new System.NotImplementedException();
+      for (int i = 0; i < _game.CurrentRoom.Items.Count; i++)
+      {
+        var item = _game.CurrentRoom.Items[i];
+
+        if (item.Name.ToLower() != itemName)
+        {
+          Messages.Add("Invalid Action");
+          return;
+        }
+
+        _game.CurrentPlayer.Inventory.Add(item);
+        Messages.Add("Item successfully obtained");
+        _game.CurrentRoom.Items.Remove(item);
+      }
     }
     ///<summary>
     ///No need to Pass a room since Items can only be used in the CurrentRoom
