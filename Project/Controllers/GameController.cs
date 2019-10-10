@@ -41,6 +41,7 @@ namespace ConsoleAdventure.Project.Controllers
           Print();
           break;
         case "look":
+          Console.Clear();
           _gameService.Look();
           break;
       }

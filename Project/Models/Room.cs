@@ -17,11 +17,11 @@ namespace ConsoleAdventure.Project.Models
     }
     public string GetTemplate()
     {
-      string template = $"You are currently in {Name} and {Description} \n The room contains:";
+      string template = $"You are currently in {Name} and {Description}\nThe room contains:";
 
       foreach (Item item in Items)
       {
-        template += $"{item.Name}: {item.Description}";
+        template += $" \n{item.Name}: {item.Description}";
       }
       return template;
     }
