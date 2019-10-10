@@ -31,6 +31,15 @@ namespace ConsoleAdventure.Project.Models
       }
       return template;
     }
+
+    public IRoom Move(string direction)
+    {
+      if (Exits.ContainsKey(direction))
+      {
+        return Exits[direction];
+      }
+      return this;
+    }
     public Room(string name, string description)
     {
       Name = name;

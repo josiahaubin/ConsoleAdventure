@@ -10,5 +10,6 @@ namespace ConsoleAdventure.Project.Interfaces
     List<Item> Items { get; set; }
     Dictionary<string, IRoom> Exits { get; set; }
     string GetTemplate();
+    IRoom Move(string direction);
   }
 }

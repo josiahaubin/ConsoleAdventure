@@ -17,7 +17,16 @@ namespace ConsoleAdventure.Project
     }
     public void Go(string direction)
     {
-      throw new System.NotImplementedException();
+      string current = _game.CurrentRoom.Name;
+      _game.CurrentRoom = _game.CurrentRoom.Move(direction);
+      string destination = _game.CurrentRoom.Name;
+
+      if (current == destination)
+      {
+        Messages.Add("Invalid Movement");
+        return;
+      }
+      Messages.Add($"Traveled from {current} to {destination}");
     }
     public void Help()
     {
