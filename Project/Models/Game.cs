@@ -23,6 +23,7 @@ namespace ConsoleAdventure.Project.Models
       Room r4 = new Room("A Dojo of Code", "This room seems like a dead end. Bummer.");
       Room lr = new Room("Pizza Under the Door room.", "You fell into CodeMonkey's trap...");
       Room wr = new Room("Developer's Paradise.", "As you enter this room you see the great code monkey typing away at his c# code...error free. He gifts you the same power as he hands you the Golden Banana.");
+      Room fr = new Room("Coding Glory", "You have achieved your quest and have obtain the ultimate coding glory.");
 
       //NOTE Create relationships between rooms
       sr.AddExit(r1, "east");
@@ -46,10 +47,12 @@ namespace ConsoleAdventure.Project.Models
       //NOTE Create items
       Item mountainDew = new Item("Mountain Dew", "A Crisp, Refreshing Exlir. Cans are commonly collected to display superiority.", r3);
       Item mountainLightning = new Item("Mountain Lightning", "Not quite dewing the dew, but saves you the pennies.", r4);
+      Item goldenBanana = new Item("Golden Banana", "This has the power to debug your code", fr);
 
       //NOTE  Add items to rooms
       sr.Items.Add(mountainDew);
       sr.Items.Add(mountainLightning);
+      wr.Items.Add(goldenBanana);
 
       CurrentRoom = sr;
     }
