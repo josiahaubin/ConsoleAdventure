@@ -44,8 +44,8 @@ namespace ConsoleAdventure.Project.Models
       lr.AddExit(r3, "south");
 
       //NOTE Create items
-      Item mountainDew = new Item("Mountain Dew", "A Crisp, Refreshing Exlir. Cans are commonly collected to display superiority.");
-      Item mountainLightning = new Item("Mountain Lightning", "Not quite dewing the dew, but saves you the pennies.");
+      Item mountainDew = new Item("Mountain Dew", "A Crisp, Refreshing Exlir. Cans are commonly collected to display superiority.", r3);
+      Item mountainLightning = new Item("Mountain Lightning", "Not quite dewing the dew, but saves you the pennies.", r4);
 
       //NOTE  Add items to rooms
       sr.Items.Add(mountainDew);

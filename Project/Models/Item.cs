@@ -8,10 +8,12 @@ namespace ConsoleAdventure.Project.Models
 
     public string Name { get; set; }
     public string Description { get; set; }
-    public Item(string name, string description)
+    public IRoom To { get; set; }
+    public Item(string name, string description, IRoom to)
     {
       Name = name;
       Description = description;
+      To = to;
     }
   }
 }

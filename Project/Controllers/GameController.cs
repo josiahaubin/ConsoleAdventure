@@ -56,6 +56,10 @@ namespace ConsoleAdventure.Project.Controllers
           Console.Clear();
           _gameService.Inventory();
           break;
+        case "use":
+          Console.Clear();
+          _gameService.UseItem(option);
+          break;
       }
     }
 

@@ -79,16 +79,15 @@ Quit: Quits the Game
       {
         var item = _game.CurrentRoom.Items[i];
 
-        if (item.Name.ToLower() != itemName)
+        if (item.Name.ToLower() == itemName)
         {
-          Messages.Add("Invalid Action");
+          _game.CurrentPlayer.Inventory.Add(item);
+          Messages.Add("Item successfully obtained");
+          _game.CurrentRoom.Items.Remove(item);
           return;
         }
-
-        _game.CurrentPlayer.Inventory.Add(item);
-        Messages.Add("Item successfully obtained");
-        _game.CurrentRoom.Items.Remove(item);
       }
+      Messages.Add("Invalid Action");
     }
     ///<summary>
     ///No need to Pass a room since Items can only be used in the CurrentRoom
@@ -97,7 +96,18 @@ Quit: Quits the Game
     ///</summary>
     public void UseItem(string itemName)
     {
-      throw new System.NotImplementedException();
+      for (int i = 0; i < _game.CurrentPlayer.Inventory.Count; i++)
+      {
+        var item = _game.CurrentPlayer.Inventory[i];
+
+        if (item.Name.ToLower() == itemName)
+        {
+          _game.CurrentRoom = item.To;
+          _game.CurrentPlayer.Inventory.Remove(item);
+          return;
+        }
+      }
+      Messages.Add("Invalid Action");
     }
 
   }
