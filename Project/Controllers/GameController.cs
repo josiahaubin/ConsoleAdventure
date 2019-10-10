@@ -47,6 +47,7 @@ namespace ConsoleAdventure.Project.Controllers
         case "go":
           Console.Clear();
           _gameService.Go(option);
+          CheckRoom();
           break;
         case "take":
           Console.Clear();
@@ -59,6 +60,7 @@ namespace ConsoleAdventure.Project.Controllers
         case "use":
           Console.Clear();
           _gameService.UseItem(option);
+          CheckRoom();
           break;
       }
     }
@@ -79,6 +81,31 @@ namespace ConsoleAdventure.Project.Controllers
       string name = Console.ReadLine();
       _gameService.Setup(name);
       Console.Clear();
+    }
+    private void CheckRoom()
+    {
+      bool validator = _gameService.CheckRoom();
+
+      if (validator == true)
+      {
+
+        _gameService.Messages.Add("Would you like to play again? (Y/N)");
+        Print();
+        string ans = Console.ReadLine().ToLower();
+
+        switch (ans)
+        {
+          case "y":
+          case "yes":
+            _gameService.Reset();
+            break;
+          case "n":
+          case "no":
+            Environment.Exit(0);
+            break;
+        }
+      }
+      return;
     }
 
   }

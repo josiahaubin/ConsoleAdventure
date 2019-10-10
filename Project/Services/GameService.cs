@@ -110,9 +110,20 @@ Quit: Quits the Game
           Messages.Add("\n\n" + _game.CurrentRoom.GetTemplate());
           return;
         }
+
       }
       Messages.Add("Invalid Action");
     }
+
+    public bool CheckRoom()
+    {
+      if (_game.CurrentRoom.Name == "Coding Glory" || _game.CurrentRoom.Name == "Pizza Under the Door room.")
+      {
+        return true;
+      }
+      return false;
+    }
+
 
   }
 }
