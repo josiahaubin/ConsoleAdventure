@@ -133,10 +133,18 @@ Quit: Quits the Game
       {
         if (_game.CurrentRoom.Name == "Coding Glory")
         {
+          Console.Beep(400, 1000);
+          Console.Beep(600, 1000);
+          Console.Beep(1200, 1100);
+
           Messages.Add("YOU WIN");
         }
         else
         {
+          Console.Beep(400, 1000);
+          Console.Beep(300, 1000);
+          Console.Beep(200, 1100);
+
           Messages.Add("YOU LOSE");
         }
         return true;
