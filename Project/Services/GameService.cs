@@ -119,6 +119,14 @@ Quit: Quits the Game
     {
       if (_game.CurrentRoom.Name == "Coding Glory" || _game.CurrentRoom.Name == "Pizza Under the Door room.")
       {
+        if (_game.CurrentRoom.Name == "Coding Glory")
+        {
+          Messages.Add("YOU WIN");
+        }
+        else
+        {
+          Messages.Add("YOU LOSE");
+        }
         return true;
       }
       return false;
