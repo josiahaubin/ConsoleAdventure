@@ -23,6 +23,12 @@ namespace ConsoleAdventure.Project.Models
       {
         template += $" \n{item.Name}: {item.Description}";
       }
+
+      template += "\n\nExits:";
+      foreach (var exit in Exits)
+      {
+        template += exit.Key;
+      }
       return template;
     }
     public Room(string name, string description)
