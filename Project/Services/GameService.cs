@@ -103,7 +103,7 @@ Quit: Quits the Game
       {
         var item = _game.CurrentPlayer.Inventory[i];
 
-        if (item.Name.ToLower() == itemName)
+        if (item.Name.ToLower() == itemName && itemName != "mountain lightning")
         {
           _game.CurrentRoom = item.To;
           _game.CurrentPlayer.Inventory.Remove(item);
@@ -111,7 +111,13 @@ Quit: Quits the Game
           Messages.Add("\n\n" + _game.CurrentRoom.GetTemplate());
           return;
         }
-
+        else if (item.Name.ToLower() == itemName && itemName == "mountain lightning")
+        {
+          _game.CurrentPlayer.Inventory.Remove(item);
+          _game.CurrentRoom.Description = "This is where you started your quest for the Golden Banana. That didn't do much, we did say to choose wisely...";
+          Messages.Add(_game.CurrentRoom.GetTemplate());
+          return;
+        }
       }
       Messages.Add("Invalid Action");
     }
