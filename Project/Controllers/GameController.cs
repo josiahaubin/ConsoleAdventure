@@ -40,6 +40,9 @@ namespace ConsoleAdventure.Project.Controllers
           _gameService.Help();
           Print();
           break;
+        case "look":
+          _gameService.Look();
+          break;
       }
     }
 
