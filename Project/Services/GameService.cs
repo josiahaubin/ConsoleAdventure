@@ -62,7 +62,8 @@ Quit: Quits the Game
     ///</summary>
     public void Reset()
     {
-      throw new System.NotImplementedException();
+      _game.CurrentPlayer.Inventory.Clear();
+      _game.Setup();
     }
 
     public void Setup(string playerName)

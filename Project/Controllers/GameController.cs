@@ -98,6 +98,8 @@ namespace ConsoleAdventure.Project.Controllers
           case "y":
           case "yes":
             _gameService.Reset();
+            Console.Clear();
+            NewGame();
             break;
           case "n":
           case "no":
