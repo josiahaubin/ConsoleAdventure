@@ -106,6 +106,8 @@ Quit: Quits the Game
         {
           _game.CurrentRoom = item.To;
           _game.CurrentPlayer.Inventory.Remove(item);
+          Messages.Add($"Teleported to the {_game.CurrentRoom.Name}");
+          Messages.Add("\n\n" + _game.CurrentRoom.GetTemplate());
           return;
         }
       }
