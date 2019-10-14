@@ -78,6 +78,12 @@ Quit: Quits the Game
     ///<summary>When taking an item be sure the item is in the current room before adding it to the player inventory, Also don't forget to remove the item from the room it was picked up in</summary>
     public void TakeItem(string itemName)
     {
+      // IItem found = _game.CurrentRoom.Items.Find(i=> i.Name.ToLower() == itemName);
+      // if(found == null){
+      //   //fail message
+      //   return;
+      // }
+
       for (int i = 0; i < _game.CurrentRoom.Items.Count; i++)
       {
         var item = _game.CurrentRoom.Items[i];
